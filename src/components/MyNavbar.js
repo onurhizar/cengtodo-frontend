@@ -1,4 +1,4 @@
-import { Nav, Navbar, Container } from "react-bootstrap"
+import { Nav, Navbar, Container, Button } from "react-bootstrap"
 
 function MyNavbar(){
 
@@ -12,6 +12,11 @@ function MyNavbar(){
                 <Nav className="me-auto">
                     <Nav.Link href="#todo">todo</Nav.Link>
                     <Nav.Link href="#comments" disabled>yorumlar</Nav.Link>
+                </Nav>
+                <Nav>
+                    <Button variant="secondary">
+                        <i class="bi bi-gear"></i>
+                    </Button>
                 </Nav>
             </Navbar.Collapse>
             </Container>
