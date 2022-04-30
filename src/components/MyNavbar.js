@@ -9,7 +9,7 @@ function MyNavbar(){
     return (
         <Fragment>
 
-        <Navbar bg="light">
+        <Navbar bg="light" fixed="top">
             <Container>
             <Navbar.Brand href="#home">iyteceng</Navbar.Brand>
             
@@ -28,13 +28,14 @@ function MyNavbar(){
             </Container>
         </Navbar>
 
-        <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas show={show} onHide={handleClose} placement="top">
             <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                <Offcanvas.Title>Ayarlar</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
             Some text as placeholder. In real life you can have the elements you
             have chosen. Like, text, images, lists, etc.
+            Gece modu, bitenleri filtrele, dil seçeneği ayarı vs..
             </Offcanvas.Body>
         </Offcanvas>
 

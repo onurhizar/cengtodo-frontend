@@ -8,7 +8,7 @@ import MyTabs from './components/MyTabs';
 function App() {
   return (
     <Fragment>
-      <MyNavbar /> <br />
+      <MyNavbar /> <br /><br /><br />
       
       <Container>
         <h1>Hoşgeldin!</h1>

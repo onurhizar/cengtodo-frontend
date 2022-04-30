@@ -7,7 +7,7 @@ export default function TodoItem(props){
         <Card>
             <Container>
                 <Row>
-                    <Col xs={10}>
+                    <Col xs={8}>
                     <Card.Body>
                         <Card.Title>{title} <Badge bg="secondary">{type}</Badge></Card.Title>
                         <Card.Text>card bodyy</Card.Text>
@@ -15,7 +15,7 @@ export default function TodoItem(props){
                     </Card.Body>
                     </Col>
 
-                    <Col xs={2}>
+                    <Col xs={4}>
                     <Form>
                         <Form.Check type="checkbox" label="done" />
                     </Form>
