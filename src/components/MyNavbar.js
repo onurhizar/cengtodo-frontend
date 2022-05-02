@@ -21,7 +21,7 @@ function MyNavbar(){
                 </Nav>
                 <Nav>
                     <Button variant="secondary" onClick={handleShow}>
-                        <i class="bi bi-gear"></i>
+                        <i className="bi bi-gear"></i>
                     </Button>
                 </Nav>
             </Navbar.Collapse>

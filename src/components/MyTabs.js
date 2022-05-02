@@ -1,21 +1,32 @@
 import { Tabs, Tab } from "react-bootstrap";
 import TodoItem from "./TodoItem";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function MyTabs(){
-    return (
-        <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
-            <Tab eventKey="home" title="Aktif">
-                <TodoItem  title="CENG112" type="midterm" /> <br />
-                <TodoItem  title="ECON106" type="homework" /> <br />
-                <TodoItem  title="MATH142" type="homework" /> <br />
-                <TodoItem  title="MATH144" type="quiz" /> <br />
+    const [todoList, setTodoList] = useState([])
 
+    // API Request when component mount, 
+    // second parameter [] is for only call once, at the beginning
+    useEffect(()=>{
+        axios.get("/api/todo/").then((response)=>{
+            setTodoList(response.data)
+        })
+    }, [])
+
+
+    const listItems = todoList.map((singleData)=>
+        <TodoItem data={singleData} key={singleData.id} />)
+
+    return (
+        <Tabs defaultActiveKey="activeTodos" 
+        id="uncontrolled-tab-example" className="mb-3">
+            
+            <Tab eventKey="activeTodos" title="Aktif">
+                {listItems}
             </Tab>
-            <Tab eventKey="profile" title="Geçmiş">
-                <p>Tarihi geçen ödev ve sınavlar.</p>
-                <TodoItem  title="MATH142" type="homework" /> <br />
-                <TodoItem  title="MATH142" type="homework" /> <br />
-                
+            <Tab eventKey="passedTodos" title="Geçmiş">
+                {listItems}
             </Tab>
         </Tabs>
     )
